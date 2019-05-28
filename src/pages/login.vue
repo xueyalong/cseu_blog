@@ -13,12 +13,21 @@
     <div class="layui-container">
       <div class="layui-row layui-col-space15">
         <div class="layui-col-md8 content detail">
+          <div class="layui-carousel" id="test1">
+            <div carousel-item>
+              <div>条目1</div>
+              <div>条目2</div>
+              <div>条目3</div>
+              <div>条目4</div>
+              <div>条目5</div>
+            </div>
+          </div>
           <div class="fly-panel detail-box">
             <h1>如何用layui实现悬浮导航</h1>
             <div class="fly-detail-info">
               <span class="layui-badge layui-bg-green fly-detail-column"> 提问 </span>
               <span class="layui-badge" style="background-color: #999;">未结</span>
-              <span class="fly-list-nums"> <i class="iconfont" title="人气"></i> 2185 </span>
+              <span class="fly-list-nums"> <i class="layui-icon layui-icon-rate" title="人气"></i> 2185 </span>
             </div> <div class="detail-about"> <a class="fly-avatar" href="/u/4858224/">
             <img src="//q.qlogo.cn/qqapp/101235792/044BCB0A23B931F461BFAB9AA2673D62/100" alt="?"> </a>
             <div class="fly-detail-user"> <a href="/u/4858224/" class="fly-link"> <cite>?</cite> </a> <span>2017-6-16 </span> </div>
@@ -54,6 +63,16 @@
   </div>
 </template>
 <script>
+// eslint-disable-next-line no-undef
+layui.use('carousel', function () {
+  var carousel = layui.carousel
+  carousel.render({
+    elem: '#test1',
+    width: '100%',
+    arrow: 'hover',
+    anim: 'default'
+  })
+})
 export default {
   name: 'LoginPage',
   data: function () {

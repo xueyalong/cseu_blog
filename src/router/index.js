@@ -6,12 +6,7 @@ import Pic from '@/pages/pic'
 import GoodsListPages from '@/pages/good-list'
 import CartPage from '@/pages/cart'
 import ProfilePage from '@/pages/profile'
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import '../../node_modules/layui-src/dist/css/layui.css'
-import '../../node_modules/bootstrap/dist/js/bootstrap.min.js'
-import '../../node_modules/layui-src/dist/layui.js'
 Vue.use(Router)
-
 const router = new Router({
   routes: [
     {
