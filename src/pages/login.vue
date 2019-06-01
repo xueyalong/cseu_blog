@@ -7,7 +7,7 @@
         </a>
         <ul class="layui-nav fly-nav layui-hide-xs">
           <li class="layui-nav-item layui-this" v-for="menu in menus">
-            <a href="/"><i class="iconfont icon-jiaoliu"></i>{{menu.title}}</a>
+            <a href="/"><i :class="menu.icon"></i>{{menu.title}}</a>
           </li>
         </ul>
 
@@ -781,12 +781,12 @@ export default {
   data: function () {
     return {
       menus: [
-        {name: 'home', url: 'home', title: '首页'},
-        {name: 'pic', url: 'pic', title: '照片'},
-        {name: 'blog', url: 'blog', title: '博文'},
-        {name: 'news', url: 'news', title: '新闻'},
-        {name: 'about', url: 'about', title: '关于我'},
-        {name: 'contact', url: 'contact', title: '联系'}
+        {name: 'home', url: 'home', title: '首页', icon: 'iconfont icon-top'},
+        {name: 'pic', url: 'pic', title: '照片', icon: 'iconfont icon-zuichun'},
+        {name: 'blog', url: 'blog', title: '博文', icon: 'iconfont icon-shui'},
+        {name: 'news', url: 'news', title: '新闻', icon: 'iconfont icon-daima'},
+        {name: 'about', url: 'about', title: '关于我', icon: 'iconfont icon-nan'},
+        {name: 'contact', url: 'contact', title: '联系', icon: 'iconfont icon-quitquanping'}
       ]
     }
   },
