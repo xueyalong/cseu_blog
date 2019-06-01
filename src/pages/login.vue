@@ -6,14 +6,8 @@
           <img src="/static/images/logo.png" alt="layui">
         </a>
         <ul class="layui-nav fly-nav layui-hide-xs">
-          <li class="layui-nav-item layui-this">
-            <a href="/"><i class="iconfont icon-jiaoliu"></i>交流</a>
-          </li>
-          <li class="layui-nav-item">
-            <a href="case/case.html"><i class="iconfont icon-iconmingxinganli"></i>案例</a>
-          </li>
-          <li class="layui-nav-item">
-            <a href="http://www.layui.com/" target="_blank"><i class="iconfont icon-ui"></i>框架</a>
+          <li class="layui-nav-item layui-this" v-for="menu in menus">
+            <a href="/"><i class="iconfont icon-jiaoliu"></i>{{menu.title}}</a>
           </li>
         </ul>
 
@@ -45,12 +39,7 @@
       <div class="layui-container">
         <ul class="layui-clear">
           <li class="layui-hide-xs layui-this"><a href="/">首页</a></li>
-          <li><a href="jie/index.html">提问</a></li>
-          <li><a href="jie/index.html">分享<span class="layui-badge-dot"></span></a></li>
-          <li><a href="jie/index.html">讨论</a></li>
-          <li><a href="jie/index.html">建议</a></li>
-          <li><a href="jie/index.html">公告</a></li>
-          <li><a href="jie/index.html">动态</a></li>
+          <li v-for="menu in menus"><a href="jie/index.html">{{menu.title}}</a></li>
           <li class="layui-hide-xs layui-hide-sm layui-show-md-inline-block"><span class="fly-mid"></span></li>
 
           <!-- 用户登入后显示 -->
@@ -120,10 +109,6 @@
                 <div class="fly-list-info">
                   <a href="user/home.html" link>
                     <cite>贤心</cite>
-                    <!--
-                    <i class="iconfont icon-renzheng" title="认证信息：XXX"></i>
-                    <i class="layui-badge fly-badge-vip">VIP3</i>
-                    -->
                   </a>
                   <span>2017-11-30</span>
 
@@ -781,38 +766,38 @@
   </div>
 </template>
 <script>
-  // eslint-disable-next-line no-undef
-  layui.use('carousel', function () {
-    var carousel = layui.carousel
-    carousel.render({
-      elem: '#test1',
-      width: '100%',
-      arrow: 'hover',
-      anim: 'default'
-    })
+// eslint-disable-next-line no-undef
+layui.use('carousel', function () {
+  var carousel = layui.carousel
+  carousel.render({
+    elem: '#test1',
+    width: '100%',
+    arrow: 'hover',
+    anim: 'default'
   })
-  export default {
-    name: 'LoginPage',
-    data: function () {
-      return {
-        menus: [
-          {name: 'home', url: 'home', title: '首页'},
-          {name: 'pic', url: 'pic', title: '照片'},
-          {name: 'blog', url: 'blog', title: '博文'},
-          {name: 'news', url: 'news', title: '新闻'},
-          {name: 'about', url: 'about', title: '关于我'},
-          {name: 'contact', url: 'contact', title: '联系'}
-        ]
-      }
-    },
-    methods: {
-      goUrl: function (url, p) {
-        console.log(url)
-        this.$router.push({
-          path: url + '?p=' + p
-        })
-      }
+})
+export default {
+  name: 'LoginPage',
+  data: function () {
+    return {
+      menus: [
+        {name: 'home', url: 'home', title: '首页'},
+        {name: 'pic', url: 'pic', title: '照片'},
+        {name: 'blog', url: 'blog', title: '博文'},
+        {name: 'news', url: 'news', title: '新闻'},
+        {name: 'about', url: 'about', title: '关于我'},
+        {name: 'contact', url: 'contact', title: '联系'}
+      ]
+    }
+  },
+  methods: {
+    goUrl: function (url, p) {
+      console.log(url)
+      this.$router.push({
+        path: url + '?p=' + p
+      })
     }
   }
+}
 
 </script>
